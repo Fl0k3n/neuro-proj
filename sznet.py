@@ -46,8 +46,8 @@ def flatten_block(inputs: tf.Tensor):
 def dense_block(inputs: tf.Tensor, units: int, dropout: float, kernel_regularizer):    
     x = Dense(units, activation="relu", kernel_regularizer=kernel_regularizer())(inputs)
     x = Dropout(dropout)(x)
-    # x = Dense(units // 2, activation="relu", kernel_regularizer=kernel_regularizer())(x)
-    # x = Dropout(dropout)(x)
+    x = Dense(units // 2, activation="relu", kernel_regularizer=kernel_regularizer())(x)
+    x = Dropout(dropout)(x)
     x = Dense(units // 4, activation="relu", kernel_regularizer=kernel_regularizer())(x)
 
     return x
