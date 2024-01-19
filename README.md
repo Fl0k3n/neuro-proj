@@ -2,7 +2,14 @@
 
 ## 1. Introduction
 
-what is schizophrenia, what is eeg, explain this auditory task, what are N100 and P200,...
+This lab project endeavors to replicate and validate findings from a pivotal research study on schizophrenia, as detailed in the provided paper [1]. The original study employed EEG technology, alongside deep learning techniques, to analyze brain activity patterns in schizophrenia patients. Through this replication effort, we aim to not only confirm the previous results but also to deepen our understanding of the EEG-based biomarkers associated with schizophrenia, particularly focusing on the auditory task-induced N100 and P200 ERP components.
+
+### Domain description
+Schizophrenia, a complex and chronic mental health disorder, significantly impacts cognitive and social functioning. Characterized by a spectrum of symptoms including delusions, hallucinations, and cognitive challenges, it presents a considerable research focus in the field of neuropsychiatry. The Electroencephalogram (EEG), a tool for recording the brain's electrical activity, has been instrumental in advancing our understanding of schizophrenia. By capturing the brain's response to stimuli, EEG helps in probing the neurological underpinnings of this disorder.
+
+A critical aspect of EEG studies in schizophrenia is the implementation of auditory tasks. These tasks are designed to elicit specific brain responses, notably the N100 and P200 event-related potentials (ERPs). The N100 is a negative wave appearing approximately 100 milliseconds after an auditory stimulus, primarily associated with sensory processing of sounds. In contrast, the P200 is a positive wave emerging around 200 milliseconds post-stimulus, linked to the cognitive aspects of auditory information processing.
+
+The integration of deep learning techniques, such as convolutional neural networks, in analyzing EEG data marks a significant advancement in schizophrenia research. These computational approaches enhance the precision of schizophrenia classification and prediction, offering deeper insights into its complex neural mechanisms. This lab project, rooted in these methodologies, aims to further our comprehension of schizophrenia through innovative EEG analysis.
 
 ## 2. Methods
 
