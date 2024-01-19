@@ -75,6 +75,7 @@ We trained a random forest classifier with 100 estimators, Gini criterion, maxim
 We achieved the following results:
 
 <p align="center">
+
 | metric   | score  |
 | -------- | -----  |
 | accuracy | 0.65   |
@@ -82,6 +83,7 @@ We achieved the following results:
 | recall   | 0.66   |
 | f1       | 0.7    |
 | specificity | 0.73|
+
 </p>
 
 
