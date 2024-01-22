@@ -1,10 +1,12 @@
 # EEG-based Schizophrenia detection
 
+Authors: Jakub Gałecki, Szymon Stępień
+
 ## 1. Introduction
 
 This lab project endeavors to replicate and validate findings from a research study on schizophrenia, as detailed in the provided paper [1]. The original study employed EEG technology, alongside deep learning techniques, to analyze brain activity patterns in schizophrenia patients. Through this replication effort, we aim to not only confirm the previous results but also to deepen our understanding of the EEG-based biomarkers associated with schizophrenia, particularly focusing on the auditory task-induced N100 and P200 ERP components.
 
-### Domain description
+### 1.1. Domain description
 Schizophrenia, a complex and chronic mental health disorder, significantly impacts cognitive and social functioning. Characterized by a spectrum of symptoms including delusions, hallucinations, and cognitive challenges, it presents a considerable research focus in the field of neuropsychiatry. The Electroencephalogram (EEG), a tool for recording the brain's electrical activity, has been instrumental in advancing our understanding of schizophrenia. By capturing the brain's response to stimuli, EEG helps in probing the neurological underpinnings of this disorder.
 
 Humans can suppress their brains' responses to sensory consequences resulting from their actions by utilizing a corollary discharge forward model system. This involves transmitting an "efference copy" of an impending motor plan from the motor to the sensory cortex, generating a "corollary discharge" representation of the expected sensory outcomes. A potential rationale for certain schizophrenia symptoms is that disruptions in the corollary discharge process within the nervous system may hinder patients' ability to distinguish between stimuli generated internally and those from external sources. 
