@@ -2,7 +2,14 @@
 
 ## 1. Introduction
 
-what is schizophrenia, what is eeg, explain this auditory task, what are N100 and P200,...
+This lab project endeavors to replicate and validate findings from a pivotal research study on schizophrenia, as detailed in the provided paper [1]. The original study employed EEG technology, alongside deep learning techniques, to analyze brain activity patterns in schizophrenia patients. Through this replication effort, we aim to not only confirm the previous results but also to deepen our understanding of the EEG-based biomarkers associated with schizophrenia, particularly focusing on the auditory task-induced N100 and P200 ERP components.
+
+### Domain description
+Schizophrenia, a complex and chronic mental health disorder, significantly impacts cognitive and social functioning. Characterized by a spectrum of symptoms including delusions, hallucinations, and cognitive challenges, it presents a considerable research focus in the field of neuropsychiatry. The Electroencephalogram (EEG), a tool for recording the brain's electrical activity, has been instrumental in advancing our understanding of schizophrenia. By capturing the brain's response to stimuli, EEG helps in probing the neurological underpinnings of this disorder.
+
+A critical aspect of EEG studies in schizophrenia is the implementation of auditory tasks. These tasks are designed to elicit specific brain responses, notably the N100 and P200 event-related potentials (ERPs). The N100 is a negative wave appearing approximately 100 milliseconds after an auditory stimulus, primarily associated with sensory processing of sounds. In contrast, the P200 is a positive wave emerging around 200 milliseconds post-stimulus, linked to the cognitive aspects of auditory information processing.
+
+The integration of deep learning techniques, such as convolutional neural networks, in analyzing EEG data would be a significant advancement in schizophrenia research. These computational approaches enhance the precision of schizophrenia classification and prediction, offering deeper insights into its complex neural mechanisms. This lab project, rooted in these methodologies, aims to further our comprehension of schizophrenia through innovative EEG analysis.
 
 ## 2. Methods
 
@@ -17,13 +24,17 @@ EEG data were recorded using a 64-channel system during the passive listening ta
 
 ### 2.2. Classical approach
 
-For the classical approach, we used ERP (Event-related potentials) of the EEG, which are signals built from averaging signals from all trials for a given electrode. 
+For the classical approach, we utilized ERP (Event-Related Potentials) from EEG recordings. These signals are derived from averaging signals across all trials for a specific electrode.
 
-For our experiments, we used 5 middle-scalp electrodes (Fz, FCz, Cz, CPz, Pz) and constructed features from ERP data. For all electrodes, slopes of signal transition before N100, between N100 and P200, and after P200 responses were computed. We also computed average signal values for time ranges of those responses (the area between the yellow regions below). For FCz and Cz electrodes, we also used amplitudes and latencies of N100 and P200 peaks, as illustrated below. We ended up with 33 features and we trained random forest classifier on that.
+In our experiments, we focused on 5 middle-scalp electrodes (Fz, FCz, Cz, CPz, Pz) and generated features from the ERP data. For all electrodes, we calculated the slopes of signal transitions before the N100, between N100 and P200, and after the P200 responses. We also computed the average signal values for the time ranges corresponding to these responses (the areas between the yellow regions shown below). Specifically, for the FCz and Cz electrodes, we included the amplitudes and latencies of the N100 and P200 peaks, as illustrated in the diagram.
 
 <p align="center">
   <img src="./imgs/rf_features.png"/>
 </p>
+
+By using averages, we were able to transform the data from time series into a single 1xN vector for each sample. Although RandomForest is an effective classifier for baseline models, it cannot process time series data directly. This led us to work with 33 features. To select the best combination of features, we applied Recursive Feature Elimination with Cross-Validation (RFECV).
+
+Additionally, we employed Stratified Cross-Validation for evaluating the accuracy on the test dataset. This, we acquired a baseline model.
 
 ### 2.3. Deep learning approach
 
@@ -48,6 +59,8 @@ We trained a random forest classifier with 100 estimators, Gini criterion, maxim
 
 We achieved the following results:
 
+<p align="center">
+  
 | metric   | score  |
 | -------- | -----  |
 | accuracy | 0.65   |
@@ -55,6 +68,8 @@ We achieved the following results:
 | recall   | 0.66   |
 | f1       | 0.7    |
 | specificity | 0.73|
+
+</p>
 
 
 As for the neural network, we tested mutliple parameters, we also tried applying stronger regularization techniques (larger dropout, L2 penalty) and reducing layer sizes or even removing 1 feed-forward layer, but the network was overfitting nevertheless. We didn't obtain any valid results and accuracy was about 0.55. Plots below illustrate one of the trainig processes.
