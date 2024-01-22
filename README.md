@@ -9,7 +9,7 @@ Schizophrenia, a complex and chronic mental health disorder, significantly impac
 
 A critical aspect of EEG studies in schizophrenia is the implementation of auditory tasks. These tasks are designed to elicit specific brain responses, notably the N100 and P200 event-related potentials (ERPs). The N100 is a negative wave appearing approximately 100 milliseconds after an auditory stimulus, primarily associated with sensory processing of sounds. In contrast, the P200 is a positive wave emerging around 200 milliseconds post-stimulus, linked to the cognitive aspects of auditory information processing.
 
-The integration of deep learning techniques, such as convolutional neural networks, in analyzing EEG data marks a significant advancement in schizophrenia research. These computational approaches enhance the precision of schizophrenia classification and prediction, offering deeper insights into its complex neural mechanisms. This lab project, rooted in these methodologies, aims to further our comprehension of schizophrenia through innovative EEG analysis.
+The integration of deep learning techniques, such as convolutional neural networks, in analyzing EEG data would be a significant advancement in schizophrenia research. These computational approaches enhance the precision of schizophrenia classification and prediction, offering deeper insights into its complex neural mechanisms. This lab project, rooted in these methodologies, aims to further our comprehension of schizophrenia through innovative EEG analysis.
 
 ## 2. Methods
 
@@ -34,22 +34,7 @@ In our experiments, we focused on 5 middle-scalp electrodes (Fz, FCz, Cz, CPz, P
 
 By using averages, we were able to transform the data from time series into a single 1xN vector for each sample. Although RandomForest is an effective classifier for baseline models, it cannot process time series data directly. This led us to work with 33 features. To select the best combination of features, we applied Recursive Feature Elimination with Cross-Validation (RFECV).
 
-Additionally, we employed Stratified Cross-Validation for evaluating the accuracy on the test dataset.
-
-<p align="center">
-
-|           | Precision | Recall | F1-Score | Support |
-|-----------|-----------|--------|----------|---------|
-| 0         | 0.67      | 0.67   | 0.67     | 6       |
-| 1         | 0.82      | 0.82   | 0.82     | 11      |
-|           |           |        |          |         |
-| Accuracy  |           |        | 0.76     | 17      |
-| Macro Avg | 0.74      | 0.74   | 0.74     | 17      |
-| Weighted Avg | 0.76   | 0.76   | 0.76     | 17      |
-
-</p>
-
-This, we acquired a baseline model with decent accuracy at 0.74.
+Additionally, we employed Stratified Cross-Validation for evaluating the accuracy on the test dataset. This, we acquired a baseline model.
 
 ### 2.3. Deep learning approach
 
@@ -75,7 +60,7 @@ We trained a random forest classifier with 100 estimators, Gini criterion, maxim
 We achieved the following results:
 
 <p align="center">
-
+  
 | metric   | score  |
 | -------- | -----  |
 | accuracy | 0.65   |
